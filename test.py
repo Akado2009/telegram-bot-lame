@@ -38,6 +38,7 @@ def stay_hydrated(client):
 
 with TelegramClient('anon', api_id, api_hash, proxy=proxy, connection=connection) as client:
     schedule.every(30).seconds.do(self_check, client)
+    print(datetime.datetime.now())
     while True:
         schedule.run_pending()
         time.sleep(1)

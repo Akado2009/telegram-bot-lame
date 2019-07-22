@@ -62,7 +62,7 @@ def main():
         # schedule.every().day.at("01:30").do(stay_hydrated, client)
         # schedule.every().day.at("02:30").do(stay_hydrated, client)
         schedule.every().day.at("08:00").do(good_morning, client)
-        schedule.every().day.at("00:10").do(good_night, client)
+        schedule.every().day.at("00:01").do(good_night, client)
         while True:
             schedule.run_pending()
             time.sleep(1)

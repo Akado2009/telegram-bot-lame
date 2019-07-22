@@ -54,12 +54,12 @@ def main():
         schedule.every(30).seconds.do(self_check, client)
         # schedule.every(2).hours.do(stay_hydrated, client)
         # time is -3 from moscow
-        # schedule.every().day.at("12:30").do(stay_hydrated, client) # 9:30
-        for hour in range(12, 24):
-            schedule.every().day.at("{}:30".format(hour)).do(stay_hydrated, client)
-        schedule.every().day.at("00:30").do(stay_hydrated, client)
-        schedule.every().day.at("01:30").do(stay_hydrated, client)
-        schedule.every().day.at("02:30").do(stay_hydrated, client)
+        schedule.every().day.at("9:30").do(stay_hydrated, client) # 9:30
+        for hour in range(10, 24):
+            schedule.every().day.at("{}:33".format(hour)).do(stay_hydrated, client)
+        # schedule.every().day.at("00:30").do(stay_hydrated, client)
+        # schedule.every().day.at("01:30").do(stay_hydrated, client)
+        # schedule.every().day.at("02:30").do(stay_hydrated, client)
         # schedule.every().day.at("08:00").do(good_morning, client)
         # schedule.every().day.at("23:30").do(good_night, client)
         while True:

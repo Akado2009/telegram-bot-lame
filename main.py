@@ -54,10 +54,10 @@ def main():
         # schedule.every(2).hours.do(stay_hydrated, client)
         # time is -3 from moscow
 
-        # 
+        # change to 30
         schedule.every().day.at("09:30").do(stay_hydrated, client) # 9:30
         for hour in range(11, 24, 2):
-            schedule.every().day.at("{}:49".format(hour)).do(stay_hydrated, client)
+            schedule.every().day.at("{}:30".format(hour)).do(stay_hydrated, client)
         # schedule.every().day.at("00:30").do(stay_hydrated, client)
         # schedule.every().day.at("01:30").do(stay_hydrated, client)
         # schedule.every().day.at("02:30").do(stay_hydrated, client)

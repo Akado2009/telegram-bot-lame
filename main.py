@@ -51,6 +51,7 @@ def good_night(client):
 # with TelegramClient('anon', api_id, api_hash, proxy=proxy, connection=connection) as client:
 def main():
     with TelegramClient('anon', api_id, api_hash, proxy=proxy, connection=connection) as client:
+        print(datetime.datetime.now())
         schedule.every(30).seconds.do(self_check, client)
         # schedule.every(2).hours.do(stay_hydrated, client)
         # time is -3 from moscow

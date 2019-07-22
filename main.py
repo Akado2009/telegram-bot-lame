@@ -27,11 +27,9 @@ def self_check(client):
     send_all_messages(client, users, messages)
 
 def stay_hydrated(client):
-    now = datetime.datetime.now()
-    if now.hour >= 9 and now.hour < 24 and now.minute == 30: 
-        users = ['kuznetmaria']
-        messages = ['Надо выпить водички!!!', 'ВОДЫЫЫЫЫЫЫ МНЕ, ВОДЫЫЫЫЫЫЫ', 'Я бы не отказался выпить воды, ты как?', 'Может немного водички?', 'Открывай бутылочку!', 'В О Д Ы']
-        send_all_messages(client, users, messages)
+    users = ['kuznetmaria']
+    messages = ['Надо выпить водички!!!', 'ВОДЫЫЫЫЫЫЫ МНЕ, ВОДЫЫЫЫЫЫЫ', 'Я бы не отказался выпить воды, ты как?', 'Может немного водички?', 'Открывай бутылочку!', 'В О Д Ы']
+    send_all_messages(client, users, messages)
 
 def good_morning(client):
     delay = random.randint(1, 60 * 5)
@@ -59,7 +57,7 @@ def main():
         # 
         schedule.every().day.at("09:30").do(stay_hydrated, client) # 9:30
         for hour in range(10, 24):
-            schedule.every().day.at("{}:43".format(hour)).do(stay_hydrated, client)
+            schedule.every().day.at("{}:49".format(hour)).do(stay_hydrated, client)
         # schedule.every().day.at("00:30").do(stay_hydrated, client)
         # schedule.every().day.at("01:30").do(stay_hydrated, client)
         # schedule.every().day.at("02:30").do(stay_hydrated, client)

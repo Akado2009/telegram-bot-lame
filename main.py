@@ -36,7 +36,7 @@ def stay_hydrated(client):
 def good_morning(client):
     delay = random.randint(1, 60 * 5)
     users = ['avgaydashenko']
-    messages = ['С Добрый утром! Удачного дня (:', ' Доброе утро, хорошего дня!', 'Держи плюс настроение на день!', ']
+    messages = ['С Добрый утром! Удачного дня (:', ' Доброе утро, хорошего дня!', 'Держи плюс настроение на день!']
     time.sleep(delay)
     send_all_messages(client, users, messages)
 

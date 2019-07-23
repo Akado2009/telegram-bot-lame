@@ -31,26 +31,12 @@ def stay_hydrated(client):
     messages = ['Надо выпить водички!!!', 'ВОДЫЫЫЫЫЫЫ МНЕ, ВОДЫЫЫЫЫЫЫ', 'Я бы не отказался выпить воды, ты как?', 'Может немного водички?', 'Открывай бутылочку!', 'В О Д Ы']
     send_all_messages(client, users, messages)
 
-def good_morning(client):
-    delay = random.randint(1, 15)
-    users = ['avgaydashenko']
-    messages = ['С Добрый утром! Удачного дня (:', ' Доброе утро, хорошего дня!', 'Держи плюс настроение на день!']
-    time.sleep(delay * 60)
-    send_all_messages(client, users, messages)
-
-def good_night(client):
-    delay = random.randint(1, 15)
-    users = ['avgaydashenko']
-    messages = ['Спокойной ночи :з', 'Сладких снов (:', 'Доброй ночи!', 'Good night!', ' Волшебных слов!']
-    time.sleep(delay * 60)
-    send_all_messages(client, users, messages)
-
 
 # with TelegramClient('anon', api_id, api_hash, proxy=proxy, connection=connection) as client:
 def main():
     with TelegramClient('anon', api_id, api_hash, proxy=proxy, connection=connection) as client:
         print(datetime.datetime.now())
-        schedule.every(30).minutes.do(self_check, client)
+        schedule.every(1).hours.do(self_check, client)
         # schedule.every(2).hours.do(stay_hydrated, client)
         # time is -3 from moscow
 
@@ -58,11 +44,6 @@ def main():
         schedule.every().day.at("09:30").do(stay_hydrated, client) # 9:30
         for hour in range(11, 24, 2):
             schedule.every().day.at("{}:30".format(hour)).do(stay_hydrated, client)
-        # schedule.every().day.at("00:30").do(stay_hydrated, client)
-        # schedule.every().day.at("01:30").do(stay_hydrated, client)
-        # schedule.every().day.at("02:30").do(stay_hydrated, client)
-        schedule.every().day.at("08:00").do(good_morning, client)
-        schedule.every().day.at("00:01").do(good_night, client)
         while True:
             schedule.run_pending()
             time.sleep(1)

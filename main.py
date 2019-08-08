@@ -28,9 +28,31 @@ def self_check(client):
 
 def stay_hydrated(client):
     users = ['kuznetmaria']
-    messages = ['Надо выпить водички!!!', 'ВОДЫЫЫЫЫЫЫ МНЕ, ВОДЫЫЫЫЫЫЫ', 'Я бы не отказался выпить воды, ты как?', 'Может немного водички?', 'Открывай бутылочку!', 'В О Д Ы']
+    messages = [
+        'Надо выпить водички!!!', 
+        'ВОДЫЫЫЫЫЫЫ МНЕ, ВОДЫЫЫЫЫЫЫ', 
+        'Я бы не отказался выпить воды, ты как?', 
+        'Может немного водички?', 
+        'Открывай бутылочку!', 
+        'В О Д Ы'
+    ]
     send_all_messages(client, users, messages)
 
+def motivation(client):
+    users = ['Daria_Soboleva']
+    messages = [
+        'Ты всё сможешь, брат!',
+        'Я в тебя по-прежнему верю!',
+        'Не сдавайся!',
+        'Т Ы М О Л О Д Е Ц !',
+        'Занимайся собой!',
+        'Не отчаивайся!',
+        'Все будет хорошо, я помогу!',
+        'Ты умничка!',
+        'Ты сильнее обстоятельств!',
+        'Будет грустно - пиши, брат!',
+    ]
+    send_all_messages(client, users, messages)
 
 # with TelegramClient('anon', api_id, api_hash, proxy=proxy, connection=connection) as client:
 def main():
@@ -42,8 +64,10 @@ def main():
 
         # change to 30
         schedule.every().day.at("09:30").do(stay_hydrated, client) # 9:30
+        schedule.every().day.at("09:30").do(motivation, client) # 9:30
         for hour in range(11, 24, 2):
             schedule.every().day.at("{}:30".format(hour)).do(stay_hydrated, client)
+            schedule.every().day.at("{}:30".format(hour)).do(motivation, client)
         while True:
             schedule.run_pending()
             time.sleep(1)

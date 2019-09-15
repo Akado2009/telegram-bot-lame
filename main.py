@@ -7,12 +7,12 @@ import random
 import schedule
 import datetime
 
-api_id = '848784'
-api_hash = '6209aac0cb13a940ef2b2a2d80a83451'
+api_id = 'ss'
+api_hash = 'ss'
 connection = ConnectionTcpMTProxyRandomizedIntermediate
 server = 'russia.proxy.digitalresistance.dog'
 port = 443
-secret = 'd41d8cd98f00b204e9800998ecf8427e'
+secret = 's'
 proxy = (server, port, secret)
 
 # hydrated

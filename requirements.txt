@@ -7,7 +7,7 @@ cryptg==0.2.post0
 hachoir==3.0a5
 idna==2.8
 multidict==4.5.2
-Pillow==6.1.0
+Pillow==9.0.0
 pyaes==1.6.1
 pyasn1==0.4.5
 pycparser==2.19
